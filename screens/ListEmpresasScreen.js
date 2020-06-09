@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { StyleSheet, View, Image, ScrollView } from 'react-native';
-import ImageTouchable from '../components/ImageTouchable';
+import * as React from "react";
+import { StyleSheet, View, Image, ScrollView } from "react-native";
+import ImageTouchable from "../components/ImageTouchable";
 
-const empresaURL = 'https://picsum.photos/360';
+const empresaURL = "https://picsum.photos/360";
 
 export default function ListEmpresasScreen({ navigation }) {
   navigation.setOptions({ headerShown: true });
@@ -16,7 +16,7 @@ export default function ListEmpresasScreen({ navigation }) {
           imgStyle={styles.image}
           key={i}
           onPress={() =>
-            navigation.navigate('Empresa', {
+            navigation.navigate("Empresa", {
               url: `https://picsum.photos/id/${20 + i}/360`,
             })
           }
@@ -27,7 +27,7 @@ export default function ListEmpresasScreen({ navigation }) {
   }, []);
 
   return (
-    <ScrollView>
+    <ScrollView style={{ backgroundColor: "#fff" }}>
       <View style={styles.container}>
         <View style={styles.list}>{empresas}</View>
       </View>
@@ -38,9 +38,9 @@ export default function ListEmpresasScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     padding: 8,
-    alignItems: 'center',
+    alignItems: "center",
   },
   image: {
     width: 120,
@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
     borderRadius: 150,
   },
   list: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    flexWrap: 'wrap',
+    flexDirection: "row",
+    justifyContent: "space-around",
+    flexWrap: "wrap",
   },
 });
