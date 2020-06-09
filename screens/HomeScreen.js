@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { Searchbar } from 'react-native-paper';
+import ImageTouchable from '../components/ImageTouchable';
 
 const produtoURL = 'https://dummyimage.com/360x360/777/aaa&text=produto';
 const servicoURL = 'https://dummyimage.com/360x360/777/aaa&text=serviço';
@@ -23,13 +24,23 @@ export default function HomeScreen({ navigation }) {
     if (!isShowingMoreProducts) {
       for (let i = 0; i < 3; i++) {
         produtosMostrados.push(
-          <Image style={styles.image} source={{ uri: produtoURL }} key={i} />
+          <ImageTouchable
+            source={{ uri: produtoURL }}
+            key={i}
+            imgStyle={styles.image}
+            onPress={() => navigation.navigate('Empresas')}
+          />
         );
       }
     } else {
       for (let i = 0; i < 7; i++) {
         produtosMostrados.push(
-          <Image style={styles.image} source={{ uri: produtoURL }} key={i} />
+          <ImageTouchable
+            source={{ uri: produtoURL }}
+            key={i}
+            imgStyle={styles.image}
+            onPress={() => navigation.navigate('Empresas')}
+          />
         );
       }
     }
@@ -41,13 +52,23 @@ export default function HomeScreen({ navigation }) {
     if (!isShowingMoreServices) {
       for (let i = 0; i < 3; i++) {
         servicosMostrados.push(
-          <Image style={styles.image} source={{ uri: servicoURL }} key={i} />
+          <ImageTouchable
+            source={{ uri: servicoURL }}
+            key={i}
+            imgStyle={styles.image}
+            onPress={() => navigation.navigate('Empresas')}
+          />
         );
       }
     } else {
       for (let i = 0; i < 10; i++) {
         servicosMostrados.push(
-          <Image style={styles.image} source={{ uri: servicoURL }} key={i} />
+          <ImageTouchable
+            source={{ uri: servicoURL }}
+            key={i}
+            imgStyle={styles.image}
+            onPress={() => navigation.navigate('Empresas')}
+          />
         );
       }
     }
