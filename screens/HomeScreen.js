@@ -10,8 +10,8 @@ import {
 import { Searchbar } from 'react-native-paper';
 import ImageTouchable from '../components/ImageTouchable';
 
-const produtoURL = 'https://dummyimage.com/360x360/777/aaa&text=produto';
-const servicoURL = 'https://dummyimage.com/360x360/777/aaa&text=serviço';
+const produtoURL = 'https://picsum.photos/360';
+const servicoURL = 'https://picsum.photos/360';
 
 export default function HomeScreen({ navigation }) {
   navigation.setOptions({ headerShown: false });
@@ -25,7 +25,7 @@ export default function HomeScreen({ navigation }) {
       for (let i = 0; i < 3; i++) {
         produtosMostrados.push(
           <ImageTouchable
-            source={{ uri: produtoURL }}
+            source={{ uri: `https://picsum.photos/id/${i + 80}/360` }}
             key={i}
             imgStyle={styles.image}
             onPress={() => navigation.navigate('Empresas')}
@@ -36,7 +36,7 @@ export default function HomeScreen({ navigation }) {
       for (let i = 0; i < 7; i++) {
         produtosMostrados.push(
           <ImageTouchable
-            source={{ uri: produtoURL }}
+            source={{ uri: `https://picsum.photos/id/${i + 80}/360` }}
             key={i}
             imgStyle={styles.image}
             onPress={() => navigation.navigate('Empresas')}
@@ -53,7 +53,7 @@ export default function HomeScreen({ navigation }) {
       for (let i = 0; i < 3; i++) {
         servicosMostrados.push(
           <ImageTouchable
-            source={{ uri: servicoURL }}
+            source={{ uri: `https://picsum.photos/id/${i + 50}/360` }}
             key={i}
             imgStyle={styles.image}
             onPress={() => navigation.navigate('Empresas')}
@@ -64,7 +64,7 @@ export default function HomeScreen({ navigation }) {
       for (let i = 0; i < 10; i++) {
         servicosMostrados.push(
           <ImageTouchable
-            source={{ uri: servicoURL }}
+            source={{ uri: `https://picsum.photos/id/${i + 50}/360` }}
             key={i}
             imgStyle={styles.image}
             onPress={() => navigation.navigate('Empresas')}

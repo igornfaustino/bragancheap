@@ -10,6 +10,7 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ListEmpresasScreen from './screens/ListEmpresasScreen';
 import BottomTabNavigator from './navigation/BottomTabNavigator';
+import EmpresaScreen from './screens/EmpresaScreen';
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,7 @@ export default function App(props) {
               <Stack.Screen name="Login" component={LoginScreen} />
               <Stack.Screen name="Home" component={BottomTabNavigator} />
               <Stack.Screen name="Empresas" component={ListEmpresasScreen} />
+              <Stack.Screen name="Empresa" component={EmpresaScreen} />
             </Stack.Navigator>
           </NavigationContainer>
         </View>

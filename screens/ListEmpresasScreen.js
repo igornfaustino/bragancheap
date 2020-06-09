@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, View, Image, ScrollView } from 'react-native';
 import ImageTouchable from '../components/ImageTouchable';
 
-const empresaURL = 'https://dummyimage.com/360x360/777/aaa&text=Empresa';
+const empresaURL = 'https://picsum.photos/360';
 
 export default function ListEmpresasScreen({ navigation }) {
   navigation.setOptions({ headerShown: true });
@@ -12,10 +12,14 @@ export default function ListEmpresasScreen({ navigation }) {
     for (let i = 0; i < 10; i++) {
       empresasParaMostrar.push(
         <ImageTouchable
-          source={{ uri: empresaURL }}
+          source={{ uri: `https://picsum.photos/id/${20 + i}/360` }}
           imgStyle={styles.image}
           key={i}
-          onPress={() => navigation.navigate('Empresa')}
+          onPress={() =>
+            navigation.navigate('Empresa', {
+              url: `https://picsum.photos/id/${20 + i}/360`,
+            })
+          }
         />
       );
     }
