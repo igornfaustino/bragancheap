@@ -1,12 +1,13 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import * as React from 'react';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import * as React from "react";
 
-import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
+import TabBarIcon from "../components/TabBarIcon";
+import HomeScreen from "../screens/HomeScreen";
+import RankingScreen from "../screens/RankingScreen";
+import LinksScreen from "../screens/LinksScreen";
 
 const BottomTab = createBottomTabNavigator();
-const INITIAL_ROUTE_NAME = 'Home';
+const INITIAL_ROUTE_NAME = "Home";
 
 export default function BottomTabNavigator({ navigation, route }) {
   // Set the header title on the parent stack navigator depending on the
@@ -20,7 +21,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Home"
         component={HomeScreen}
         options={{
-          title: 'Home',
+          title: "Home",
           tabBarIcon: ({ focused }) => (
             <TabBarIcon focused={focused} name="md-code-working" />
           ),
@@ -28,9 +29,9 @@ export default function BottomTabNavigator({ navigation, route }) {
       />
       <BottomTab.Screen
         name="Ranking"
-        component={HomeScreen}
+        component={RankingScreen}
         options={{
-          title: 'Ranking',
+          title: "Ranking",
           tabBarIcon: ({ focused }) => (
             <TabBarIcon focused={focused} name="md-code-working" />
           ),
@@ -40,7 +41,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Sobre Nos"
         component={HomeScreen}
         options={{
-          title: 'Sobre Nos',
+          title: "Sobre Nos",
           tabBarIcon: ({ focused }) => (
             <TabBarIcon focused={focused} name="md-code-working" />
           ),
@@ -55,11 +56,11 @@ function getHeaderTitle(route) {
     route.state?.routes[route.state.index]?.name ?? INITIAL_ROUTE_NAME;
 
   switch (routeName) {
-    case 'Home':
-      return 'Home';
-    case 'Ranking':
-      return 'Ranking';
-    case 'Sobre Nos':
-      return 'Sobre Nos';
+    case "Home":
+      return "Home";
+    case "Ranking":
+      return "Ranking";
+    case "Sobre Nos":
+      return "Sobre Nos";
   }
 }
