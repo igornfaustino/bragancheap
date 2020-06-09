@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     paddingTop: 30,
     padding: 16,
     position: "relative",
+    marginTop: "15%",
   },
   image: {
     marginTop: "6%",

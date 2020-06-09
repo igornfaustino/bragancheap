@@ -31,8 +31,8 @@ export default function App(props) {
           {Platform.OS === "ios" && <StatusBar barStyle="dark-content" />}
           <NavigationContainer linking={LinkingConfiguration}>
             <Stack.Navigator>
-              <Stack.Screen name="Coupon" component={CouponScreen} />
               <Stack.Screen name="Login" component={LoginScreen} />
+              <Stack.Screen name="Coupon" component={CouponScreen} />
               <Stack.Screen name="Ranking" component={RankingScreen} />
               <Stack.Screen name="Register" component={RegisterScreen} />
               <Stack.Screen name="Home" component={BottomTabNavigator} />
