@@ -11,7 +11,7 @@ import { TextInput, Button } from 'react-native-paper';
 const castelo = require('../assets/images/castelo.jpeg');
 
 export default function LoginScreen({ navigation }) {
-  navigation.setOptions({ headerShown: false });
+  navigation.setOptions({ headerShown: true });
 
   return (
     <ImageBackground source={castelo} style={styles.container}>
@@ -22,7 +22,7 @@ export default function LoginScreen({ navigation }) {
         <Button
           icon="login"
           mode="contained"
-          onPress={() => console.log('Pressed')}
+          onPress={() => navigation.navigate('Home')}
         >
           Login
         </Button>
