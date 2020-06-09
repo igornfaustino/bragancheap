@@ -7,6 +7,7 @@ import {
   Text,
 } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
+import { CommonActions } from '@react-navigation/native';
 
 const castelo = require('../assets/images/castelo.jpeg');
 
@@ -22,7 +23,14 @@ export default function LoginScreen({ navigation }) {
         <Button
           icon="login"
           mode="contained"
-          onPress={() => navigation.navigate('Home')}
+          onPress={() =>
+            navigation.dispatch(
+              CommonActions.reset({
+                index: 1,
+                routes: [{ name: 'Home' }],
+              })
+            )
+          }
         >
           Login
         </Button>

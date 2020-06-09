@@ -9,6 +9,9 @@ import {
 } from 'react-native';
 import { Searchbar } from 'react-native-paper';
 
+const produtoURL = 'https://dummyimage.com/360x360/777/aaa&text=produto';
+const servicoURL = 'https://dummyimage.com/360x360/777/aaa&text=serviço';
+
 export default function HomeScreen({ navigation }) {
   navigation.setOptions({ headerShown: false });
 
@@ -20,19 +23,13 @@ export default function HomeScreen({ navigation }) {
     if (!isShowingMoreProducts) {
       for (let i = 0; i < 3; i++) {
         produtosMostrados.push(
-          <Image
-            style={styles.image}
-            source={{ uri: 'https://dummyimage.com/360x360/777/aaa' }}
-          />
+          <Image style={styles.image} source={{ uri: produtoURL }} key={i} />
         );
       }
     } else {
       for (let i = 0; i < 7; i++) {
         produtosMostrados.push(
-          <Image
-            style={styles.image}
-            source={{ uri: 'https://dummyimage.com/360x360/777/aaa' }}
-          />
+          <Image style={styles.image} source={{ uri: produtoURL }} key={i} />
         );
       }
     }
@@ -44,19 +41,13 @@ export default function HomeScreen({ navigation }) {
     if (!isShowingMoreServices) {
       for (let i = 0; i < 3; i++) {
         servicosMostrados.push(
-          <Image
-            style={styles.image}
-            source={{ uri: 'https://dummyimage.com/360x360/777/aaa' }}
-          />
+          <Image style={styles.image} source={{ uri: servicoURL }} key={i} />
         );
       }
     } else {
       for (let i = 0; i < 10; i++) {
         servicosMostrados.push(
-          <Image
-            style={styles.image}
-            source={{ uri: 'https://dummyimage.com/360x360/777/aaa' }}
-          />
+          <Image style={styles.image} source={{ uri: servicoURL }} key={i} />
         );
       }
     }

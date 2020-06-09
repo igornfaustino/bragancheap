@@ -7,6 +7,7 @@ import {
   Text,
 } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
+import { CommonActions } from '@react-navigation/native';
 
 const castelo = require('../assets/images/castelo.jpeg');
 
@@ -27,7 +28,17 @@ export default function RegisterScreen({ navigation }) {
         <TextInput style={styles.input} label="Digite o seu telemovel" />
         <TextInput style={styles.input} label="Digite a sua senha" />
         <TextInput style={styles.input} label="Confirme a sua senha" />
-        <Button mode="contained" onPress={() => navigation.navigate('Home')}>
+        <Button
+          mode="contained"
+          onPress={() =>
+            navigation.dispatch(
+              CommonActions.reset({
+                index: 1,
+                routes: [{ name: 'Home' }],
+              })
+            )
+          }
+        >
           Registrar
         </Button>
       </View>
